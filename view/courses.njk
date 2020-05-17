@@ -1,0 +1,74 @@
+{% extends "layout.njk"%}
+
+{% block content %}
+
+    {% block head %}
+        <title>Cursos - Desafio 3</title>
+    {% endblock %}
+
+    <section class="cards">
+        <div class="card" id="starter">
+            <div class="card_image-container">
+                <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
+            </div>
+            <div class="card_content">
+                <p>Starter</p>
+            </div>
+            <div class="card_info">
+                <p>5 Módulos</p>
+                <p class="card_price">
+                    FREE
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="launchbase">
+            <div class="card_image-container">
+                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Launch Base">
+            </div>
+            <div class="card_content">
+                <p>Launch Base Bootcamp</p>
+            </div>
+            <div class="card_info">
+                <p>14 Módulos</p>
+                <p class="card_price">
+                    Paid
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="gostack">
+            <div class="card_image-container">
+                <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="Go Stack">
+            </div>
+            <div class="card_content">
+                <p>Go Stack Bootcamp</p>
+            </div>
+            <div class="card_info">
+                <p>6 weeks</p>
+                <p class="card_price">
+                    Paid
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="close-modal">
+                <i class="material-icons">close</i>
+            </div>
+            <div class="maximize-modal">
+                <span class="material-icons">maximize</span>
+            </div>
+
+            <div class="modal-content">
+                <iframe src="" frameborder="0"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+{% endblock %}
