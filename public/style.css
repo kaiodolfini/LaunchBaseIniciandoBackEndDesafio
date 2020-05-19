@@ -193,3 +193,15 @@ iframe{
     margin: 0 auto;
     transition: all 300ms;    
 }
+
+/*======== CARDS ========*/
+
+.course{
+    position: relative;
+    max-width: 100%;
+}
+
+.course-container{
+    position: absolute;
+    max-width: 100%;
+}

@@ -10,10 +10,11 @@ server.set("view engine", "njk")
 
 nunjucks.configure("view", {
     express: server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 
-server.get("/", function(req, res){
+server.get("/", function (req, res) {
     const about = {
         title: "ROCKETSEAT",
         subtitle: "As melhores tecnologias em programação, direto ao ponto e do jeito certo.",
@@ -21,24 +22,36 @@ server.get("/", function(req, res){
         description2: "Em um mundo onde a informação fica obsoleta cada vez mais rápido, velocidade de aprendizado é a chave para o sucesso.",
         description3: "Por isso a Rocketseat oferece através de uma plataforma inteligente e metodologia prática, além de comunidade, eventos, conteúdo e conexão com o mercado de trabalho, todas as ferramentas que você precisa para masterizar no menor tempo possível as tecnologias mais modernas de desenvolvimento web e mobile, e dessa forma avançar para o próximo nível como programador.",
         tecnologies: [
-            { name: "Javascript"},
-            { name: "Node JS"},
-            { name: "React JS"},
-            { name: "React Native"}
+            { name: "Javascript" },
+            { name: "Node JS" },
+            { name: "React JS" },
+            { name: "React Native" }
         ]
     }
 
     return res.render("about", { about })
 })
 
-server.get("/courses", function(req, res){
+server.get("/courses", function (req, res) {
     return res.render("courses", { items: courses })
 })
 
-server.use(function(req, res) {
+server.get("/courses/:id", function (req, res) {
+    const id = req.params.id;
+    const course = courses.find(function (course) {
+        return course.id == id
+    })
+    if (!course) {
+        return res.render("not-found")
+    }
+    return res.render("course", {item: course })
+
+});
+
+server.use(function (req, res) {
     res.status(404).render("not-found")
 })
 
-server.listen(5001, function(){
+server.listen(5001, function () {
     console.log("Server is Running")
 })
