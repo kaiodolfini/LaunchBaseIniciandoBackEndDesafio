@@ -104,6 +104,7 @@ header{
 }
 .card{
     background-color: var(--color-video);
+    display: grid;
 }
 
 .card_image-container img{
@@ -115,6 +116,7 @@ header{
     padding: 24px;
     font-size: 16px;
     text-align: center;
+    align-items: center;
 }
 
 .card_info{

@@ -7,50 +7,22 @@
     {% endblock %}
 
     <section class="cards">
-        <div class="card" id="starter">
-            <div class="card_image-container">
-                <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
+        {% for item in items %}
+            <div class="card" id="{{course.id}}">
+                <div class="card_image-container">
+                    <img src= "{{item.image}}" alt="Imagem de {{item.id}}">
+                </div>
+                <div class="card_content">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card_info">
+                    <p>{{item.modules}}</p>
+                    <p class="card_price">
+                       {{item.price}}
+                    </p>
+                </div>
             </div>
-            <div class="card_content">
-                <p>Starter</p>
-            </div>
-            <div class="card_info">
-                <p>5 Módulos</p>
-                <p class="card_price">
-                    FREE
-                </p>
-            </div>
-        </div>
-
-        <div class="card" id="launchbase">
-            <div class="card_image-container">
-                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Launch Base">
-            </div>
-            <div class="card_content">
-                <p>Launch Base Bootcamp</p>
-            </div>
-            <div class="card_info">
-                <p>14 Módulos</p>
-                <p class="card_price">
-                    Paid
-                </p>
-            </div>
-        </div>
-
-        <div class="card" id="gostack">
-            <div class="card_image-container">
-                <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="Go Stack">
-            </div>
-            <div class="card_content">
-                <p>Go Stack Bootcamp</p>
-            </div>
-            <div class="card_info">
-                <p>6 weeks</p>
-                <p class="card_price">
-                    Paid
-                </p>
-            </div>
-        </div>
+        {% endfor %}
     </section>
 
     <div class="modal-overlay">
